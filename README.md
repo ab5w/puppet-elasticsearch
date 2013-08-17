@@ -36,11 +36,11 @@ If you set a non default install path you will need to specify this
 
 Once installed onto your node(s), you can access the elasticsearch web interface here;
 
-http://<your server>:9200/
+http://serverhostname:9200/
 
 and the elasticsearch-head interface here;
 
-http://<your server>:9200/_plugin/head/
+http://serverhostname:9200/_plugin/head/
 
 Copyright (C) 2013 Craig Parker craig@paragon.net.uk
 
