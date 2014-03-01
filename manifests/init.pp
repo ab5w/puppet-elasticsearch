@@ -17,13 +17,13 @@
 # along with this program; If not, see <http://www.gnu.org/licenses/>.
 #
 
-class elasticsearch ( 
+class elasticsearch (
 
-	$esversion = "0.90.3",
+	$esversion = "1.0.1",
 	$installdir = "/opt/elasticsearch",
 
 ){
-	
+
 	Exec { path => '/usr/bin:/usr/sbin/:/bin:/sbin' }
 
 	package {"java-1.7.0-openjdk":
@@ -55,7 +55,7 @@ class elasticsearch (
 	exec {"wrapper-wget":
 		cwd => "/usr/src",
 		command => "wget https://github.com/elasticsearch/elasticsearch-servicewrapper/archive/master.zip",
-		creates => "/usr/src/master",
+		creates => "/usr/src/master.zip",
 	} ->
 
 	exec {"wrapper-unzip":
@@ -84,7 +84,7 @@ class elasticsearch (
 		command => "$installdir/bin/plugin -install mobz/elasticsearch-head",
 		creates => "$installdir/plugins/head/_site/index.html",
 	} ->
-	
+
 	service {"elasticsearch":
 		ensure => "running",
 	}

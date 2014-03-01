@@ -9,7 +9,7 @@ To install add the following to your nodes manifest;
 
     class {'elasticsearch':}
 
-It will default to version 0.90.3 and an install path of /opt/elasticsearch
+It will default to version 1.0.1 and an install path of /opt/elasticsearch
 
 You can also specify the version and the install path like so
 
@@ -20,14 +20,14 @@ You can also specify the version and the install path like so
 
 For a clustered setup add the following to each nodes manifest as well as the main class, the clustername needs to be the same on all nodes.
 
-    class { 'elasticsearch::cluster': 
+    class { 'elasticsearch::cluster':
         nodename => "example-001",
         clustername => "example-elasticsearch",
     }
 
 If you set a non default install path you will need to specify this
 
-    class { 'elasticsearch::cluster': 
+    class { 'elasticsearch::cluster':
         nodename => "example-001",
         clustername => "example-elasticsearch",
         installdir => "/srv/elasticsearch",
