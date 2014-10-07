@@ -7,30 +7,30 @@ http://mobz.github.io/elasticsearch-head/
 
 To install add the following to your nodes manifest;
 
-    class {'elasticsearch':}
+    class { 'elasticsearch': }
 
 It will default to version 1.0.1 and an install path of /opt/elasticsearch
 
 You can also specify the version and the install path like so
 
-    class {'elasticsearch':
-        esversion => "0.90.2",
-        installdir => "/srv/elasticsearch",
+    class { 'elasticsearch':
+        esversion  => '0.90.2',
+        installdir => '/srv/elasticsearch',
     }
 
 For a clustered setup add the following to each nodes manifest as well as the main class, the clustername needs to be the same on all nodes.
 
     class { 'elasticsearch::cluster':
-        nodename => "example-001",
-        clustername => "example-elasticsearch",
+        nodename    => 'example-001',
+        clustername => 'example-elasticsearch',
     }
 
 If you set a non default install path you will need to specify this
 
     class { 'elasticsearch::cluster':
-        nodename => "example-001",
-        clustername => "example-elasticsearch",
-        installdir => "/srv/elasticsearch",
+        nodename    => 'example-001',
+        clustername => 'example-elasticsearch',
+        installdir  => '/srv/elasticsearch',
     }
 
 
